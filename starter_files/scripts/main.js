@@ -12,32 +12,58 @@
 // parseint function is: parseInt(string, radix);//
 
 function handValue(hand) {
-  console.log(hand);
+  // console.log(hand);
   let total = 0;
+
   for (let i = 0; i < hand.length; i++) {
-    if (hand[i] === "K" || hand[i] === "Q" || hand[i] === "J") {
-      total += 10;
-    }
-    for (let j = 0; j < hand[i].length; j++) {
-      if total >= 21 {
-        let "A" = 1;
-        else {
-          let "A" = 11;
-        }
-        let total = hand[j] +=
-      }
+ if (hand[i] === "K" || hand[i] === "Q" || hand[i] === "J") {
+   total += 10;
+ }
+ else if (hand[i] === "A") {
+   total += 11;
+   if (total > 21) {
+     total -= 10
+   }
+ }
+ else {
+     total += parseInt(hand[i],10);
+  }
 
-    }
 
-    console.log();
+}
+
+for (let i = 0; i < hand.length; i++) {
+  if (total > 21 && hand[i] === "A") {
+    total -= 10;
+  }
+}
+  return total;
+}
+
+
+
+  // for (let i = 0; i < hand.length; i++) {
+  //   if (hand[i] === "K" || hand[i] === "Q" || hand[i] === "J") {
+  //     total += 10;
+  //   }
+  //   for (let j = 0; j < hand[i].length; j++) {
+  //     if total > 21 {
+  //       let "A" = 1;
+  //       else {
+  //         let "A" = 11;
+  //       }
+  //       let total = hand[j] +=
+  //     }
+  //   }
+  //   console.log();
 
     // // if (hand[i] === "A"){
     //
     // }
-  }
-
-  return;
-}
+//   }
+//
+//   return;
+// }
 
 
 /* -----  Hints ------
